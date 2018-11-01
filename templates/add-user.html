@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <h2 id="titulo">Agregar Usuario</h2>
+      <form method="post">
+        <p id="titulo3">Username</p>
+        <input type="text" class="form-control" name="username">
+        <br>
+        <p id="titulo3">Password</p>
+        <input type="password" class="form-control" name="password">
+        <br>
+        <p id="titulo3">Email</p>
+        <input type="email" class="form-control" name="email">
+        <br>
+      
+  
+        <button id="titulo4" type="submit">Registrar</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

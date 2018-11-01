@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Lucas Rusatti">
+
+    <title>Metal-Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- fonts CSS -->	
+	<link href="https://fonts.googleapis.com/css?family=Metal+Mania|Metamorphous&amp;subset=latin-ext" rel="stylesheet">
+    
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+		<div class ="col-md-2">
+			<img src="/static/images/HM1.png" class="img-responsive">
+		</div>
+		<div class ="col-md-10">
+			<p id="titulo" class="text-right">Heavy Metal</p>
+			<p id="titulo2" class="text-right">Bands</p>
+		</div>		
+    </div>
+	
+
+	
+    <div class="bienvenida row">
+		<div class="col-md-3 text-left ">
+			<a class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Bienvenido {{username}}</a>
+		</div>
+		<div class="col-md-9 text-right">		
+		{% if username %}
+			<a href="/logout" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Logout</a>
+        {% else %}
+			<a href="/login" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">login</a>
+        {% endif %}
+
+
+    	
+		</div>	
+	
+
+    </div>
+    <div class="boton row">
+	    {% if username %}
+			<div class="col-md-3 text-left">
+			<a href="/agregarPost" class="btn btn-secondary btn-lg active">Agregar Post</a>
+			</div>
+		{% endif %}
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <div class="row">
+        
+          {% block content %}
+          {% endblock %}
+        
+      </div>
+
+  </div>
+  
+  
+
+
+</body>
+
+</html>
